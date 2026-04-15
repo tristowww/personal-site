@@ -30,43 +30,42 @@
    ========================================================================== */
 
 :root {
-  /* Primary Palette (Vintage Editorial: ivory + forest + coral) */
-  --color-plum: #1F3A2B;                  /* deep forest green (primary dark) */
-  --color-gold: #E85A6B;                  /* warm coral/pink (CTA accent) */
-  --color-olive: #7A8B4A;                 /* muted olive */
-  --color-terracotta: #D98B6E;            /* terracotta accent */
-  --color-purple-muted: #D4A84B;          /* warm mustard */
+  /* Primary Palette (Lavender + Terracotta) */
+  --color-plum: #2A2A2A;                  /* charcoal (primary dark) */
+  --color-gold: #C44A2F;                  /* burnt terracotta (CTA accent) — 4.6:1 on white */
+  --color-olive: #5E6E30;                 /* deep sage (text-safe on cream, 5.8:1) */
+  --color-terracotta: #D98B6E;            /* muted coral/salmon */
+  --color-purple-muted: #7E7EB0;          /* muted lavender */
 
   /* Backgrounds */
-  --color-bg-page: #F6EFDE;              /* ivory / cream (page canvas) */
-  --color-bg-card: #FBF6E9;              /* lighter cream (cards) */
-  --color-bg-sage: #C7D3A8;             /* soft sage */
-  --color-bg-gold-tint: #F2D98A;        /* pale mustard */
-  --color-bg-blush: #F5C4C0;            /* pale coral */
+  --color-bg-page: #EBF5ED;              /* soft mint (page canvas) */
+  --color-bg-card: #F5F0EA;              /* warm cream (primary surface) */
+  --color-bg-sage: #C4CFA0;             /* sage green (card variant) */
+  --color-bg-gold-tint: #C5C5E8;        /* soft periwinkle (card variant) */
+  --color-bg-blush: #EDCEBE;            /* light coral tint */
   --color-white: #ffffff;
 
   /* Text */
-  --color-text-heading: #1F3A2B;         /* forest green headings */
-  --color-text-body: #2E2A24;            /* warm near-black body */
-  --color-text-muted: #6B6155;           /* warm brown-gray */
-  --color-text-on-dark: #FBF6E9;
+  --color-text-heading: #2A2A2A;         /* charcoal — 12.5:1 on mint, 10:1 on cream */
+  --color-text-body: #3A3A3A;            /* dark gray — 9.8:1 on mint, 9:1 on cream */
+  --color-text-muted: #555555;           /* medium gray — 6.4:1 on mint, 5.5:1 on cream */
+  --color-text-on-dark: #ffffff;
 
   /* Legacy mappings (for existing markup) */
-  --color-primary: #1F3A2B;
-  --color-cta: #E85A6B;
-  --color-cta-hover: #C9414F;
-  --color-bg-warm: #FBF6E9;
-  --color-bg-cool: #C7D3A8;
-  --color-text: #2E2A24;
-  --color-text-light: #6B6155;
-  --color-border: rgba(31, 58, 43, 0.18);
-  --color-border-strong: rgba(31, 58, 43, 0.35);
-  --color-black: #1F3A2B;
+  --color-primary: #2A2A2A;
+  --color-cta: #C44A2F;
+  --color-cta-hover: #A83D27;
+  --color-bg-warm: #F5F0EA;
+  --color-bg-cool: #C4CFA0;
+  --color-text: #3A3A3A;
+  --color-text-light: #555555;
+  --color-border: rgba(42, 42, 42, 0.18);
+  --color-border-strong: rgba(42, 42, 42, 0.3);
+  --color-black: #2A2A2A;
 
   /* Typography */
-  --font-heading: "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-heading: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-script: "Caveat", "Brush Script MT", cursive;
   --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
 
   /* Font Sizes */
@@ -191,15 +190,14 @@ a {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
-  font-weight: 600;
-  line-height: 1.1;
-  letter-spacing: -0.01em;
+  font-weight: 300;
+  line-height: 1.2;
   color: var(--color-plum);
   margin-bottom: var(--space-4);
 }
 
-h1 { font-size: var(--text-5xl); }
-h2 { font-size: var(--text-4xl); }
+h1 { font-size: var(--text-4xl); }
+h2 { font-size: var(--text-3xl); }
 h3 { font-size: var(--text-2xl); }
 h4 { font-size: var(--text-xl); }
 h5 { font-size: var(--text-lg); }
@@ -1815,264 +1813,4 @@ hr {
     color: rgba(255, 255, 255, 0.3);
     font-size: var(--text-sm);
   }
-}
-
-/* ==========================================================================
-   22. Vintage Editorial Redesign Overrides
-   ========================================================================== */
-
-body {
-  background-color: var(--color-bg-page);
-}
-
-/* Script accent (used in hero headline for handwritten feel) */
-.script-accent {
-  font-family: var(--font-script);
-  font-weight: 700;
-  font-style: normal;
-  color: var(--color-gold);
-  font-size: 1.15em;
-  line-height: 0.9;
-  letter-spacing: 0.01em;
-  transform: rotate(-2deg);
-  display: inline-block;
-}
-
-/* Hero */
-.hero {
-  padding: var(--space-16) var(--space-6) var(--space-12);
-  max-width: var(--max-width);
-  margin: 0 auto;
-}
-
-.hero__headline {
-  font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: clamp(2.5rem, 6vw, 4.75rem);
-  line-height: 1.05;
-  color: var(--color-plum);
-  letter-spacing: -0.015em;
-}
-
-.hero__headline .highlight--gold,
-.hero__headline .highlight--blush {
-  font-style: italic;
-  font-weight: 600;
-  color: var(--color-plum);
-  background: none;
-  padding: 0;
-}
-
-.hero__tagline {
-  font-family: var(--font-body);
-  font-size: var(--text-lg);
-  color: var(--color-text-body);
-  max-width: 46ch;
-}
-
-.hero__visual {
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  border: 1px solid var(--color-border);
-  box-shadow: var(--shadow-md);
-}
-
-.hero__visual--placeholder {
-  background: var(--color-bg-blush);
-  min-height: 320px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-plum);
-  font-family: var(--font-script);
-  font-size: var(--text-2xl);
-}
-
-/* Divider bar — dark forest strip with cream text */
-.hero-divider {
-  background: var(--color-plum);
-  color: var(--color-bg-card);
-  padding: var(--space-3) var(--space-6);
-  text-align: center;
-}
-
-.hero-divider__text {
-  font-family: var(--font-body);
-  font-weight: 500;
-  font-size: var(--text-sm);
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
-  color: var(--color-bg-card);
-  margin: 0;
-}
-
-.hero-divider-line { display: none; }
-
-/* Intro section — two centered columns on cream */
-.intro-section {
-  max-width: var(--max-width-wide);
-  margin: 0 auto;
-  padding: var(--space-16) var(--space-6);
-  text-align: center;
-}
-
-.intro-section__heading {
-  font-family: var(--font-heading);
-  font-style: italic;
-  font-weight: 400;
-  font-size: var(--text-3xl);
-  color: var(--color-plum);
-}
-
-/* Topic grid — horizontal icon + text rows, editorial feel */
-.topic-grid {
-  max-width: var(--max-width-wide);
-  margin: 0 auto;
-  padding: var(--space-8) var(--space-6) var(--space-16);
-}
-
-.topic-grid__heading {
-  font-family: var(--font-heading);
-  font-style: italic;
-  font-weight: 400;
-  text-align: center;
-  font-size: var(--text-4xl);
-  margin-bottom: var(--space-10);
-}
-
-.topic-grid__list {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  border-top: 1px solid var(--color-border);
-}
-
-.topic-card {
-  display: grid;
-  grid-template-columns: 56px 1fr;
-  gap: var(--space-6);
-  align-items: center;
-  padding: var(--space-6) var(--space-4);
-  border-bottom: 1px solid var(--color-border);
-  background: transparent;
-  box-shadow: none;
-}
-
-.topic-card__icon {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.6rem;
-  background: var(--color-bg-blush);
-}
-
-.topic-card__icon--gold { background: var(--color-bg-gold-tint); }
-.topic-card__icon--sage { background: var(--color-bg-sage); }
-.topic-card__icon--blush { background: var(--color-bg-blush); }
-
-.topic-card__body { padding: 0; }
-
-.topic-card__title {
-  font-family: var(--font-heading);
-  font-weight: 600;
-  font-size: var(--text-2xl);
-  color: var(--color-plum);
-  margin-bottom: var(--space-1);
-}
-
-.topic-card__desc {
-  font-family: var(--font-body);
-  color: var(--color-text-body);
-  margin-bottom: var(--space-1);
-}
-
-.topic-card__tags {
-  font-family: var(--font-body);
-  font-size: var(--text-xs);
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--color-text-muted);
-}
-
-/* Marquee — dark forest strip */
-.marquee-ticker {
-  background: var(--color-plum);
-  color: var(--color-bg-card);
-  padding: var(--space-4) 0;
-  overflow: hidden;
-  border-top: 1px solid rgba(251, 246, 233, 0.15);
-  border-bottom: 1px solid rgba(251, 246, 233, 0.15);
-}
-
-.marquee-ticker__text {
-  color: var(--color-bg-card);
-  font-family: var(--font-body);
-  font-weight: 500;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  font-size: var(--text-sm);
-  white-space: nowrap;
-  margin: 0;
-}
-
-/* CTA pill button — the signature bold coral pill */
-.cta-block {
-  text-align: center;
-  padding: var(--space-16) var(--space-6);
-}
-
-.cta-block__headline,
-.cta-block h2 {
-  font-family: var(--font-heading);
-  font-style: italic;
-  font-weight: 400;
-  font-size: var(--text-4xl);
-  color: var(--color-plum);
-  margin-bottom: var(--space-6);
-}
-
-.cta-block .btn,
-.cta-block a.btn {
-  display: inline-block;
-  background: var(--color-gold);
-  color: var(--color-white);
-  font-family: var(--font-body);
-  font-weight: 700;
-  font-size: var(--text-base);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  padding: var(--space-5) var(--space-10);
-  border-radius: var(--radius-pill);
-  border: none;
-  box-shadow: var(--shadow-md);
-  transition: transform var(--transition-base), background var(--transition-base);
-}
-
-.cta-block .btn:hover {
-  background: var(--color-cta-hover);
-  transform: translateY(-2px);
-}
-
-/* Site header tweaks */
-.site-header {
-  background: var(--color-bg-page);
-  border-bottom: 1px solid var(--color-border);
-}
-
-.site-header__title {
-  font-family: var(--font-heading);
-  font-weight: 700;
-  font-style: italic;
-  color: var(--color-plum);
-}
-
-.site-nav__link {
-  font-family: var(--font-body);
-  font-size: var(--text-sm);
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--color-plum);
 }
