@@ -1,0 +1,139 @@
+---
+layout: default
+title: Home
+---
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero__content">
+    <h1 class="hero__headline">
+      TODO: Your big
+      <span class="highlight--gold">editorial headline</span>
+      <br>
+      <span class="script-accent">...and a script accent!</span>
+    </h1>
+    <div class="hero__columns">
+      <p class="hero__tagline">TODO: One-sentence tagline describing what this site is about.</p>
+      <div class="hero__column">
+        <p>TODO: Secondary hero copy.</p>
+        <a href="{{ '/about/' | relative_url }}">Learn More &rarr;</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero__visual hero__visual--placeholder">
+    <span class="hero__visual-placeholder">TODO: hero image</span>
+  </div>
+</section>
+
+<!-- Divider Bar -->
+<div class="hero-divider">
+  <p class="hero-divider__text">TODO: Tagline / role</p>
+</div>
+<div class="hero-divider-line"></div>
+
+<!-- What I Write About / My Approach -->
+<section class="intro-section">
+  <div class="intro-section__grid">
+    <div class="intro-section__col">
+      <h2 class="intro-section__heading">TODO: Heading A</h2>
+      <p class="intro-section__text">TODO: Paragraph A.</p>
+    </div>
+    <div class="intro-divider"></div>
+    <div class="intro-section__col">
+      <h2 class="intro-section__heading">TODO: Heading B</h2>
+      <p class="intro-section__text">TODO: Paragraph B.</p>
+    </div>
+  </div>
+</section>
+
+<!-- What You'll Find Here -->
+<section class="topic-grid">
+  <h2 class="topic-grid__heading">TODO: Topic grid heading</h2>
+  <div class="topic-grid__list">
+    <div class="topic-card">
+      <div class="topic-card__icon topic-card__icon--blush">&#x2728;</div>
+      <div class="topic-card__body">
+        <h3 class="topic-card__title">TODO: Topic 1</h3>
+        <p class="topic-card__desc">TODO: Description.</p>
+        <span class="topic-card__tags">&#10003; TAG &nbsp;&nbsp; &#10003; TAG</span>
+      </div>
+    </div>
+    <div class="topic-card">
+      <div class="topic-card__icon topic-card__icon--gold">&#x2728;</div>
+      <div class="topic-card__body">
+        <h3 class="topic-card__title">TODO: Topic 2</h3>
+        <p class="topic-card__desc">TODO: Description.</p>
+        <span class="topic-card__tags">&#10003; TAG &nbsp;&nbsp; &#10003; TAG</span>
+      </div>
+    </div>
+    <div class="topic-card">
+      <div class="topic-card__icon topic-card__icon--sage">&#x2728;</div>
+      <div class="topic-card__body">
+        <h3 class="topic-card__title">TODO: Topic 3</h3>
+        <p class="topic-card__desc">TODO: Description.</p>
+        <span class="topic-card__tags">&#10003; TAG &nbsp;&nbsp; &#10003; TAG</span>
+      </div>
+    </div>
+    <div class="topic-card">
+      <div class="topic-card__icon topic-card__icon--blush">&#x2728;</div>
+      <div class="topic-card__body">
+        <h3 class="topic-card__title">TODO: Topic 4</h3>
+        <p class="topic-card__desc">TODO: Description.</p>
+        <span class="topic-card__tags">&#10003; TAG &nbsp;&nbsp; &#10003; TAG</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Marquee Ticker -->
+<div class="marquee-ticker">
+  <p class="marquee-ticker__text">TODO &nbsp; &#10022; &nbsp; TODO &nbsp; &#10022; &nbsp; TODO &nbsp; &#10022; &nbsp; TODO &nbsp; &#10022; &nbsp; TODO &nbsp; &#10022; &nbsp; TODO</p>
+</div>
+
+<!-- Latest Posts (Dark Section) -->
+<section class="dark-posts">
+  <p class="dark-posts__label">Latest Writing</p>
+  <h2 class="dark-posts__heading">Latest Posts</h2>
+  <p class="dark-posts__sub">TODO: Subheading.</p>
+  <div class="dark-posts__grid">
+    {% for post in site.posts limit:3 %}
+    <article class="featured-card">
+      <div class="featured-card__image featured-card__image--{% cycle 'olive', 'terracotta', 'plum' %}">
+        {% if post.category %}
+        <span class="featured-card__image-text">{{ post.category | upcase | truncate: 5, "" }}</span>
+        {% endif %}
+        {% if forloop.first %}<span class="featured-card__badge">New</span>{% endif %}
+      </div>
+      <div class="featured-card__body">
+        <span class="featured-card__tag featured-card__tag--{% cycle 'olive', 'terracotta', 'plum' %}">{{ post.categories | join: " / " | upcase | default: "POST" }}</span>
+        <h3 class="featured-card__title">{{ post.title }}</h3>
+        {% if post.excerpt %}
+        <p class="featured-card__excerpt">{{ post.excerpt | strip_html | truncatewords: 20 }}</p>
+        {% endif %}
+        <a href="{{ post.url | relative_url }}" class="featured-card__link">Read More &rarr;</a>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+{% if site.posts.size > 3 %}
+<!-- Archive Strip -->
+<section class="archive-strip">
+  <p class="archive-strip__label">More from the Archive</p>
+  <div class="archive-strip__list">
+    {% for post in site.posts limit:3 offset:3 %}
+    <a href="{{ post.url | relative_url }}" class="archive-item">
+      <div>
+        <p class="archive-item__title">{{ post.title }}</p>
+        <span class="archive-item__tag archive-item__tag--{% cycle 'olive', 'terracotta', 'purple' %}">{{ post.categories | join: " / " | upcase | default: "POST" }}</span>
+      </div>
+      <span class="archive-item__arrow">&rarr;</span>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+
+<!-- Bottom CTA -->
+{% include cta-block.html headline="TODO: CTA headline" description="TODO: CTA description." button_text="TODO: Button" button_url="/about/" style="primary" %}

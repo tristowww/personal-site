@@ -1,0 +1,32 @@
+title: "TODO: Site Title"
+description: "TODO: Site description for SEO and social cards."
+url: "https://TODO.github.io"
+baseurl: "/TODO-repo-name"
+author:
+  name: "TODO: Author Name"
+  bio: "TODO: Short author bio."
+markdown: kramdown
+permalink: /blog/:year/:month/:title/
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+twitter:
+  card: summary_large_image
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: post
+  - scope:
+      path: "pages"
+    values:
+      layout: page
+
+og_image: /assets/images/og-default.jpg
+
+exclude: [README.md, LICENSE, CLAUDE.md, .claude, "*.code-workspace", "pages/CLAUDE.md", "assets/css/CLAUDE.md", "assets/js/CLAUDE.md", "_data/CLAUDE.md", "_posts/CLAUDE.md", "_layouts/CLAUDE.md"]

@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cp -r C:/Users/v-tristow/OneDrive/teresa-ristow-io/_layouts C:/Users/v-tristow/OneDrive/teresa-ristow-io/_includes C:/Users/v-tristow/OneDrive/teresa-ristow-io/_data C:/Users/v-tristow/OneDrive/teresa-ristow-io/_posts C:/Users/v-tristow/OneDrive/teresa-ristow-io/pages C:/Users/v-tristow/OneDrive/teresa-ristow-io/assets C:/Users/v-tristow/OneDrive/personal-site/)",
+      "Bash(cp C:/Users/v-tristow/OneDrive/teresa-ristow-io/_config.yml C:/Users/v-tristow/OneDrive/teresa-ristow-io/404.html C:/Users/v-tristow/OneDrive/teresa-ristow-io/robots.txt C:/Users/v-tristow/OneDrive/teresa-ristow-io/index.html C:/Users/v-tristow/OneDrive/teresa-ristow-io/CLAUDE.md C:/Users/v-tristow/OneDrive/personal-site/)",
+      "Bash(cp -r C:/Users/v-tristow/OneDrive/teresa-ristow-io/.claude C:/Users/v-tristow/OneDrive/personal-site/)",
+      "Bash(rm:*)",
+      "Bash(ls:*)"
+    ]
+  }
+}
